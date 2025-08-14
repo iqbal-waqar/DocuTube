@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuTube - AI-Powered Document & Video Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://emojiapi.dev/api/v1/1f4c4/64.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo-glow">
+                <div class="logo-container">
+                    <i class="fas fa-brain logo-icon"></i>
+                    <span class="sidebar-logo-text">DocuTube</span>
+                    <span class="logo-subtitle">AI Intelligence</span>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-item active" onclick="showSection('home')" data-tooltip="Home">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span class="nav-text">Home</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" onclick="showSection('upload')" data-tooltip="Upload Documents">
+                    <i class="fas fa-cloud-upload-alt nav-icon"></i>
+                    <span class="nav-text">Upload</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" onclick="showSection('chat')" data-tooltip="AI Chat">
+                    <i class="fas fa-comments nav-icon"></i>
+                    <span class="nav-text">AI Chat</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" onclick="showSection('youtube')" data-tooltip="YouTube AI">
+                    <i class="fab fa-youtube nav-icon"></i>
+                    <span class="nav-text">YouTube AI</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" onclick="showSection('faq')" data-tooltip="About">
+                    <i class="fas fa-info-circle nav-icon"></i>
+                    <span class="nav-text">About</span>
+                    <div class="nav-indicator"></div>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="main decorative-bg">
+        <header class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-btn" id="sidebarToggleBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="navbar-brand">
+                        <div class="brand-logo">
+                            <i class="fas fa-brain brand-icon"></i>
+                        </div>
+                        <div class="brand-content">
+                            <span class="brand-text">DocuTube</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="navbar-nav">
+                    <a href="#" onclick="showSection('home')" class="nav-link active" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" onclick="showSection('upload')" class="nav-link" data-section="upload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Upload</span>
+                    </a>
+                    <a href="#" onclick="showSection('chat')" class="nav-link" data-section="chat">
+                        <i class="fas fa-comments"></i>
+                        <span>Chat</span>
+                    </a>
+                    <a href="#" onclick="showSection('youtube')" class="nav-link" data-section="youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </nav>
+                
+                <div class="navbar-actions">
+                    <button class="mobile-menu-btn" title="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button class="action-btn theme-btn" onclick="toggleTheme()" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <section id="home" class="section active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i>
+                        <span>AI-Powered Intelligence</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Welcome to <span class="gradient-text">DocuTube</span>
+                    </h1>
+                    <p class="hero-description">
+                        Transform your documents and videos into intelligent conversations. 
+                        Upload files, chat with AI, or summarize YouTube content with cutting-edge technology.
+                    </p>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-file-alt feature-icon"></i>
+                            <span>Smart Document Processing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-robot feature-icon"></i>
+                            <span>AI-Powered Chat</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fab fa-youtube feature-icon"></i>
+                            <span>Video Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button onclick="showSection('upload')" class="btn btn-primary">
+                            <i class="fas fa-upload"></i>
+                            <span>Start Uploading</span>
+                        </button>
+                        <button onclick="showSection('chat')" class="btn btn-secondary">
+                            <i class="fas fa-comments"></i>
+                            <span>Try AI Chat</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-number">RAG</div>
+                    <div class="stat-label">Powered Document Processing</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">AI</div>
+                    <div class="stat-label">Enhanced Video Summarization</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Smart</div>
+                    <div class="stat-label">Contextual Chat Assistant</div>
+                </div>
+            </div>
+        </section>
+        <section id="upload" class="section">
+            <div class="upload-section-container">
+                <div class="upload-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Document Upload
+                    </h2>
+                    <p class="section-description">
+                        Upload your documents and let our AI extract insights and enable intelligent conversations.
+                    </p>
+                </div>
+                
+                <!-- Main Upload Area -->
+                <div class="upload-main-area">
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Drag & Drop your files here</h3>
+                        <p>or click to browse</p>
+                        <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx,.txt">
+                        <div class="supported-formats">
+                            <span class="format-badge">PDF</span>
+                            <span class="format-badge">DOC</span>
+                            <span class="format-badge">DOCX</span>
+                            <span class="format-badge">TXT</span>
+                            <span class="format-badge tip">Max 25MB</span>
+                        </div>
+                    </div>
+
+                    <!-- Selected file details -->
+                    <div class="file-details" id="fileDetails" style="display:none;">
+                        <div class="file-row">
+                            <div class="file-left">
+                                <div class="file-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="file-meta">
+                                    <div class="file-name" id="fileName">No file selected</div>
+                                    <div class="file-sub" id="fileInfoSub">—</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm" id="removeFileBtn" onclick="clearSelectedFile()">
+                                <i class="fas fa-times"></i><span>Remove</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Progress UI -->
+                    <div class="progress-container" id="uploadProgress" style="display:none;">
+                        <div class="progress-bar" id="progressBar" style="width:0%"></div>
+                        <div class="progress-meta">
+                            <span class="progress-text" id="progressText">Ready to upload</span>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-actions">
+                        <button onclick="uploadDocument()" class="btn btn-primary upload-btn">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Document</span>
+                        </button>
+                        <button class="btn btn-secondary btn-sm" id="cancelUploadBtn" style="display:none;">
+                            <i class="fas fa-ban"></i><span>Cancel</span>
+                        </button>
+                    </div>
+                    
+                    <div id="uploadStatus" class="upload-status"></div>
+                </div>
+                
+                <!-- Features Section -->
+                <div class="upload-features-section">
+                    <h3 class="features-title">Why Choose Our Document Processing?</h3>
+                    <div class="upload-features">
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure Processing</h4>
+                            <p>Your documents are processed securely with enterprise-grade encryption.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Lightning Fast</h4>
+                            <p>Advanced AI algorithms process your documents in seconds, not minutes.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>Smart Analysis</h4>
+                            <p>Our AI understands context and extracts meaningful insights from your content.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+        <section id="chat" class="section">
+            <div class="chat-section-container">
+                <div class="chat-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-robot"></i>
+                        AI Chat Assistant
+                    </h2>
+                    <p class="section-description">
+                        Have intelligent conversations about your uploaded documents with our advanced AI.
+                    </p>
+                </div>
+                
+                <!-- Main Chat Area -->
+                <div class="chat-main-area">
+                    <div class="chat-messages" id="chatBox">
+                        <div class="welcome-message">
+                            <div class="ai-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <h4>Hello! I'm your AI assistant</h4>
+                                <p>I can help you understand and analyze your uploaded documents. Ask me anything!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="input-wrapper">
+                            <input type="text" id="chatInput" placeholder="Ask me anything about your documents..." class="chat-input">
+                            <button onclick="sendMessage()" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn" onclick="document.getElementById('chatInput').value='Summarize the main points'; sendMessage();">
+                                <i class="fas fa-list"></i>
+                                <span>Summarize</span>
+                            </button>
+                            <button class="quick-btn" onclick="document.getElementById('chatInput').value='What are the key insights?'; sendMessage();">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Key Insights</span>
+                            </button>
+                            <button class="quick-btn" onclick="document.getElementById('chatInput').value='Explain this in simple terms'; sendMessage();">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Explain</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Features Section -->
+                <div class="chat-features-section">
+                    <h3 class="features-title">AI Chat Capabilities</h3>
+                    <div class="chat-features">
+                        <div class="feature-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>Context Aware</h4>
+                            <p>Understands your documents and maintains conversation context for better responses.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-search"></i>
+                            <h4>Smart Search</h4>
+                            <p>Quickly finds relevant information from your uploaded documents.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Intelligent Insights</h4>
+                            <p>Provides meaningful analysis and insights from your document content.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+        <section id="youtube" class="section">
+            <div class="youtube-section-container">
+                <div class="youtube-header">
+                    <h2 class="section-title">
+                        <i class="fab fa-youtube"></i>
+                        YouTube AI Summarizer
+                    </h2>
+                    <p class="section-description">
+                        Transform any YouTube video into intelligent summaries and insights with our advanced AI.
+                    </p>
+                </div>
+                
+                <!-- Main YouTube Analysis Area -->
+                <div class="youtube-main-area">
+                    <div class="url-input-section">
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <input type="text" id="ytUrl" placeholder="Paste YouTube video URL here..." class="url-input">
+                            <button onclick="summarizeYoutube()" class="btn btn-primary analyze-btn">
+                                <i class="fas fa-magic"></i>
+                                <span>Analyze Video</span>
+                            </button>
+                        </div>
+                        <div class="url-examples">
+                            <span class="example-label">Try with:</span>
+                            <button class="example-url" onclick="document.getElementById('ytUrl').value='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">
+                                Educational Video
+                            </button>
+                            <button class="example-url" onclick="document.getElementById('ytUrl').value='https://www.youtube.com/watch?v=example'">
+                                Tech Tutorial
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="ytSummaryMeta" class="summary-meta"></div>
+                    
+                    <div class="action-buttons">
+                        <button onclick="showMockYouTubeResults()" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            <span>Show Demo Results</span>
+                        </button>
+                        <button id="showMetaBtn" onclick="toggleMetaCard()" style="display:none;" class="btn btn-secondary">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Show Details</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video Results Section -->
+                <div class="youtube-results-section" id="youtubeResults" style="display:none;">
+                    <div class="results-grid">
+                        <!-- Video Details Card -->
+                        <div class="video-details-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-info-circle"></i> Video Details</h3>
+                                <button class="card-toggle" onclick="toggleCard('videoDetails')">
+                                    <i class="fas fa-chevron-up"></i>
+                                </button>
+                            </div>
+                            <div class="card-content" id="videoDetailsContent">
+                                <div class="video-thumbnail-container">
+                                    <img id="videoThumbnail" src="" alt="Video thumbnail" class="video-thumbnail">
+                                    <div class="video-duration" id="videoDuration"></div>
+                                </div>
+                                <div class="video-info">
+                                    <h4 id="videoTitle" class="video-title"></h4>
+                                    <p id="videoChannel" class="video-channel"></p>
+                                    <div class="video-stats">
+                                        <span id="videoViews" class="stat-item"></span>
+                                        <span id="videoLikes" class="stat-item"></span>
+                                        <span id="videoPublished" class="stat-item"></span>
+                                    </div>
+
+                                    <div class="video-tags" id="videoTags"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Summary Card -->
+                        <div class="ai-summary-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-brain"></i> AI Summary</h3>
+                                <div class="card-actions">
+                                    <button class="action-btn" onclick="copySummary()" title="Copy Summary">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadSummary()" title="Download Summary">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="card-toggle" onclick="toggleCard('aiSummary')">
+                                        <i class="fas fa-chevron-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-content" id="aiSummaryContent">
+                                <div class="summary-tabs">
+                                    <button class="tab-btn active" onclick="showSummaryTab('overview')">Summary</button>
+                                    <button class="tab-btn" onclick="showSummaryTab('description')">Description</button>
+                                    <button class="tab-btn" onclick="showSummaryTab('timestamps')">Timestamps</button>
+                                    <button class="tab-btn" onclick="showSummaryTab('insights')">Insights</button>
+                                </div>
+                                
+                                <div class="tab-content active" id="overviewTab">
+                                    <div class="summary-section">
+                                        <h5><i class="fas fa-file-text"></i> Quick Summary</h5>
+                                        <div id="quickSummary" class="summary-text"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="descriptionTab">
+                                    <div class="summary-section">
+                                        <h5><i class="fas fa-align-left"></i> Video Description</h5>
+                                        <div id="videoDescriptionContent" class="description-content"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="timestampsTab">
+                                    <div class="summary-section">
+                                        <h5><i class="fas fa-clock"></i> Timestamped Summary</h5>
+                                        <div id="timestampedSummary" class="timestamps-list"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="insightsTab">
+                                    <div class="summary-section">
+                                        <h5><i class="fas fa-lightbulb"></i> AI Insights</h5>
+                                        <div id="aiInsights" class="insights-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube Features Section -->
+                <div class="youtube-features-section">
+                    <h3 class="features-title">YouTube AI Analysis Features</h3>
+                    <div class="youtube-features">
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Time-Stamped</h4>
+                            <p>Get summaries with precise timestamps for easy navigation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tags"></i>
+                            <h4>Topic Extraction</h4>
+                            <p>Automatically identify and categorize key topics discussed.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Sentiment Analysis</h4>
+                            <p>Understand the tone and sentiment of the video content.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="about-container">
+                <div class="about-header">
+                    <span class="about-badge">About DocuTube</span>
+                    <h1 class="about-title">Intelligent Document & Video Analysis</h1>
+                    <p class="about-subtitle">Transform the way you interact with documents and video content using our advanced AI platform</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-intro">
+                        <h2>What We Do</h2>
+                        <p>DocuTube is an innovative platform that combines advanced document analysis with YouTube video processing. Our system uses cutting-edge AI technology to make your content more accessible and understandable.</p>
+                    </div>
+
+                    <div class="feature-columns">
+                        <div class="feature-column">
+                            <i class="fas fa-file-alt"></i>
+                            <h3>Document Intelligence</h3>
+                            <p>Powered by RAG (Retrieval Augmented Generation) technology</p>
+                            <ul>
+                                <li>Process PDF, DOC, DOCX, and TXT files</li>
+                                <li>Smart semantic understanding</li>
+                                <li>Context-aware information retrieval</li>
+                                <li>Interactive document chat</li>
+                                <li>Intelligent summarization</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-column">
+                            <i class="fab fa-youtube"></i>
+                            <h3>Video Analysis</h3>
+                            <p>Integrated with YouTube Data API v3</p>
+                            <ul>
+                                <li>Automatic transcript extraction</li>
+                                <li>Content summarization</li>
+                                <li>Key points identification</li>
+                                <li>Chapter-based navigation</li>
+                                <li>Video insights generation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-overview">
+                        <h2>Our Technology</h2>
+                        <div class="tech-pills">
+                            <span class="tech-pill"><i class="fas fa-server"></i> FastAPI Backend</span>
+                            <span class="tech-pill"><i class="fas fa-database"></i> SQLAlchemy</span>
+                            <span class="tech-pill"><i class="fas fa-brain"></i> RAG Technology</span>
+                            <span class="tech-pill"><i class="fab fa-youtube"></i> YouTube API</span>
+                            <span class="tech-pill"><i class="fas fa-shield-alt"></i> Secure Storage</span>
+                            <span class="tech-pill"><i class="fas fa-code"></i> Modern Frontend</span>
+                        </div>
+                    </div>
+
+                    <div class="workflow-section">
+                        <h2>How It Works</h2>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <span class="step-number">1</span>
+                                <h4>Upload</h4>
+                                <p>Upload your documents or paste YouTube URLs</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-number">2</span>
+                                <h4>Process</h4>
+                                <p>AI analyzes and understands your content</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-number">3</span>
+                                <h4>Interact</h4>
+                                <p>Chat, query, and explore your content</p>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="step-number">4</span>
+                                <h4>Learn</h4>
+                                <p>Gain insights and understanding</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h2>Security & Privacy</h2>
+                        <div class="security-features">
+                            <div class="security-feature">
+                                <i class="fas fa-lock"></i>
+                                <h4>End-to-End Encryption</h4>
+                                <p>Your data is always protected</p>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Secure Storage</h4>
+                                <p>Enterprise-grade security measures</p>
+                            </div>
+                            <div class="security-feature">
+                                <i class="fas fa-user-shield"></i>
+                                <h4>Privacy First</h4>
+                                <p>Your data, your control</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            
+
+                        
+        
+        <footer class="modern-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-brain"></i>
+                    <span>DocuTube</span>
+                </div>
+                <div class="footer-text">
+                    <span>Crafted with <i class="fas fa-heart pulse"></i> by <strong>Waqar</strong></span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+google-generativeai
+python-dotenv
+langchain
+langchain-google-genai
+langchain-community
+langchain-pinecone
+langchain-milvus
+langchain-text-splitters
+langchain-huggingface
+fastapi
+uvicorn
+python-multipart
+youtube-transcript-api
+pytube
+requests
+pinecone-client==3.2.2
+pymilvus
+# Document processing libraries
+PyMuPDF  # PDF processing
+python-docx  # Word documents
+openpyxl  # Excel files
+python-pptx  # PowerPoint files
+markdown  # Markdown files
+beautifulsoup4  # HTML processing
+lxml  # XML processing
+pandas  # CSV/Excel data processing
+unstructured[local-inference]  # Advanced document processing
+python-magic  # File type detection
+# Additional LangChain dependencies
+chromadb  # Alternative vector store
+faiss-cpu  # Facebook AI Similarity Search
+alembic  # Database migrations
+sqlalchemy  # Database ORM
